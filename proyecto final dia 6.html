@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>English Study Web</title>
+
+<style>
+
+
+body{
+font-family: Arial, sans-serif;
+margin:0;
+background-color:#f4f6fa;
+}
+
+header{
+background:linear-gradient(to right,#3a7bd5,#76baf2);
+color:white;
+text-align:center;
+padding:25px;
+}
+
+
+
+nav{
+background-color:#222;
+padding:12px;
+text-align:center;
+}
+
+nav a{
+color:white;
+margin:15px;
+text-decoration:none;
+font-size:17px;
+}
+
+nav a:hover{
+text-decoration:underline;
+}
+
+
+.container{
+display:flex;
+}
+
+aside{
+width:25%;
+background:#e3e9f2;
+padding:20px;
+}
+
+main{
+width:75%;
+padding:20px;
+background:white;
+}
+
+section{
+margin-bottom:40px;
+}
+
+
+input{
+padding:8px;
+margin-top:5px;
+}
+
+button{
+padding:8px 14px;
+background:#3a7bd5;
+color:white;
+border:none;
+cursor:pointer;
+margin-top:10px;
+}
+
+button:hover{
+background:#2c5fb2;
+}
+
+.resultado{
+margin-top:10px;
+font-weight:bold;
+}
+
+
+
+footer{
+background:#3a7bd5;
+color:white;
+text-align:center;
+padding:15px;
+}
+
+</style>
+
+<script>
+
+
+
+function corregirEjercicio(){
+
+let respuesta = document.getElementById("respuesta1").value.toLowerCase()
+
+if(respuesta=="played"){
+
+document.getElementById("resultado1").innerHTML="✅ Correcto"
+
+}else{
+
+document.getElementById("resultado1").innerHTML="❌ Incorrecto. Intenta otra vez."
+
+}
+
+}
+
+
+
+function corregirTest(){
+
+let puntos=0
+
+let r1=document.getElementById("test1").value.toLowerCase()
+
+if(r1=="went"){
+puntos++
+}
+
+let r2=document.querySelector('input[name="pregunta2"]:checked')
+
+if(r2 && r2.value=="b"){
+puntos++
+}
+
+document.getElementById("resultadoTest").innerHTML=
+"Puntuación: "+puntos+" / 2"
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>English Study Web</h1>
+<p>Proyecto Final TIC 2º Bachillerato</p>
+
+
+</header>
+
+<nav>
+
+<a href="#descripcion">Descripción</a>
+<a href="#contenidos">Contenidos</a>
+<a href="#ejercicios">Ejercicios</a>
+<a href="#test">Test</a>
+<a href="#proyecto">Proyecto</a>
+
+</nav>
+
+<div class="container">
+
+<aside>
+
+<h3>Unidades</h3>
+
+<ol>
+<li>Grammar</li>
+<li>Vocabulary</li>
+<li>Reading</li>
+<li>Writing</li>
+<li>Listening</li>
+<li>Speaking</li>
+</ol>
+
+<h3>Estado del proyecto</h3>
+
+<p>Sin acabar, dia 6</p>
+
+
+</aside>
+
+<main>
+
+<section id="descripcion">
+
+<h2>Descripción del proyecto</h2>
+
+<p>
+Esta página web tiene como objetivo ayudar a estudiar inglés mediante
+explicaciones claras y ejercicios interactivos.
+</p>
+
+<p>
+El proyecto seguirá ampliándose con más contenidos, actividades y
+pruebas tipo test para mejorar el aprendizaje.
+</p>
+
+</section>
+
+<section id="contenidos">
+
+<h2>Contenido: Past Simple</h2>
+
+<p>
+El <strong>Past Simple</strong> se utiliza para acciones terminadas en el pasado.
+</p>
+
+<h3>Estructura</h3>
+
+<p>
+Sujeto + verbo en pasado + complemento.
+</p>
+
+<p><strong>Ejemplo:</strong></p>
+
+<p>I visited London last year.</p>
+
+</section>
+
+<section id="ejercicios">
+
+<h2>Ejercicio interactivo</h2>
+
+<p>Completa la frase:</p>
+
+<p>I ______ (play) football yesterday.</p>
+
+<input id="respuesta1" type="text">
+
+<br>
+
+<button onclick="corregirEjercicio()">Comprobar</button>
+
+<p id="resultado1" class="resultado"></p>
+
+</section>
+
+<section id="test">
+
+<h2>Mini test</h2>
+
+<p>1️ Completa:</p>
+
+<p>I ______ to the park yesterday.</p>
+
+<input id="test1" type="text">
+
+<p>2️ Elige la frase correcta:</p>
+
+<label>
+<input type="radio" name="pregunta2" value="a">
+She go to school
+</label>
+
+<br>
+
+<label>
+<input type="radio" name="pregunta2" value="b">
+She goes to school
+</label>
+
+<br>
+
+<label>
+<input type="radio" name="pregunta2" value="c">
+She going to school
+</label>
+
+<br><br>
+
+<button onclick="corregirTest()">Corregir test</button>
+
+<p id="resultadoTest"></p>
+
+</section>
+
+<section id="proyecto">
+
+<h2>Información del proyecto</h2>
+
+<p><strong>Alumno:</strong> Nicolás Amarelle Facal y Lucas López Ramos</p>
+
+<p><strong>Asignatura:</strong> Inglés</p>
+
+<p><strong>Tecnologías utilizadas:</strong></p>
+
+<ul>
+<li>HTML</li>
+<li>Git / GitHub</li>
+</ul>
+
+
+</section>
+
+</main>
+
+</div>
+
+<footer>
+
+Proyecto en desarrollo • Curso 2025-2026
+
+</footer>
+
+</body>
+</html>
